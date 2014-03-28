@@ -1,0 +1,13 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @cliente.nome %>
+</p>
+
+<p>
+  <strong>Idade:</strong>
+  <%= @cliente.idade %>
+</p>
+
+<%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+<%= link_to 'Voltar', clientes_path %>
+<%= link_to 'Nova Qualificação', :controller => :qualificacoes, :action => :new, :cliente => @cliente %>
