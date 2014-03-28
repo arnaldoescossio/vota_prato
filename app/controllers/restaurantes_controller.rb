@@ -3,7 +3,7 @@ class RestaurantesController < ApplicationController
   before_action :set_restaurante, only: [:show, :edit, :update, :destroy]
 
   def index
-    @restaurantes = Restaurante.order :nome
+    @restaurantes = Restaurante.order(:nome).page(params[:page]).per(3)
   end
 
   def show
@@ -50,6 +50,6 @@ class RestaurantesController < ApplicationController
   end
 
   def restaurante_params
-    params.require(:restaurante).permit(:nome, :endereco, :especialidade)
+    params.require(:restaurante).permit(:nome, :endereco, :especialidade, :foto)
   end
 end
