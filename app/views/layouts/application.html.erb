@@ -7,11 +7,15 @@
           <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
           <%= csrf_meta_tags %>
     </head>
-<body>
-    <%= menu_principal %>
+    <body>
+        <%= menu_principal %>
 
-    <p style="color: green"><%= flash[:notice] %></p>
+        <p style="color: green"><%= flash[:notice] %></p>
 
-    <%= yield %>
-</body>
+        <%= yield %>
+
+        <script type="text/javascript">
+            <%= yield :js %>
+        </script>
+    </body>
 </html>

@@ -25,6 +25,16 @@
   <b>Preço médio: </b>
   <%= valor_formatado(@restaurante.qualificacoes.average :valor_gasto) %>
 </p>
+<p>
+  <b>Foto: </b>
+  <%= image_tag @restaurante.foto.url(:thumb) %>
+</p>
+
+<% unless @restaurante.comentarios.empty?%>
+    <%= comentarios @restaurante %>
+<% end %>
+
+<%= novo_comentario(@restaurante) %>
 
 <%= link_to 'Editar', { :action => 'edit', :id => @restaurante } %>
 <%= link_to 'Voltar', { :action => 'index' } %>
